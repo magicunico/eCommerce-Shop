@@ -1,14 +1,14 @@
 :root{
-  --mainBlue: #2a2a72;
-  --lightBlue:#009ffd;
-  --mainWhite: #f3f3f3;
+  --mainColor: #3a3a47;
+  --lightColor:#009ffd;
+  --mainLight: #f3f3f3;
   --mainDark:#232528;
-  --mainYellow:#ffa400;
+  --mainAccent:#ffa400;
 }
 
 body{
   font-family: "Oswald",sans-serif !important;
-  background: var(--mainWhite) !important;
+  background: var(--mainLight) !important;
   color: var(--mainDark) !important;
 }
 
@@ -18,11 +18,11 @@ letter-spacing: 0.3rem;
 text-transform: uppercase;
 }
 
-.text-blue{
-  color: var(--mainBlue);
+.text-color{
+  color: var(--mainColor);
 }
 
 .text-bright{
-  color: var(--lightBlue);
+  color: var(--lightColor);
 }
 
