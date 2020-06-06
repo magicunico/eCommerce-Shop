@@ -14,14 +14,14 @@ export default class Navbar extends React.Component {
                 <ul className="navbar-nav align-items-center">
                     <li className="nav-item ml-5">
                         <Link to="/" className="nav-link">
-                            products
+                            Books
                         </Link>
                     </li>
                 </ul>
                 <Link to="/cart" className="ml-auto">
                     <ButtonContainer>
                         <span className="mr-2">
-                            <i className="fas fa-cart-plus" />
+                            <i className="fas fa-shopping-cart" />
                         </span>
                         my cart
                         </ButtonContainer>
@@ -34,7 +34,7 @@ export default class Navbar extends React.Component {
 const NavWrapper = styled.nav`
 background: var(--mainColor);
 .nav-link{
-    color: var(--yellow) !important;
+    color: var(--mainAccent) !important;
     font-size: 1.8rem;
     text-transform: capitalize !important;
 }

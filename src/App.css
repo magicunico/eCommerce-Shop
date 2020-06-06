@@ -1,9 +1,9 @@
 :root{
   --mainColor: #3a3a47;
-  --lightColor:#009ffd;
+  --lightColor:#3a3a47;
   --mainLight: #f3f3f3;
   --mainDark:#232528;
-  --mainAccent:#ffa400;
+  --mainAccent:#d9ff00;
 }
 
 body{
@@ -19,7 +19,7 @@ text-transform: uppercase;
 }
 
 .text-color{
-  color: var(--mainColor);
+  color: var(--mainAccent);
 }
 
 .text-bright{
