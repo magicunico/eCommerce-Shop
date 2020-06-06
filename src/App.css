@@ -1,6 +1,6 @@
 :root{
   --mainColor: #3a3a47;
-  --lightColor:#4c4ca5;
+  --lightColor:#3a3a47c0;
   --mainLight: #f3f3f3;
   --mainDark:#232528;
   --mainAccent:#d9ff00;
@@ -26,10 +26,21 @@ color: var(--mainColorAccent);
   padding: 0.5rem;
 }
 
+.background-colorAccent{
+  color: var(--mainAccent);
+  background-color: var(--lightColor);
+  
+}
+
 .text-colorAccent{
   color: var(--mainColorAccent);
   background-color: var(--mainColor);
-  padding: 0.5rem;
+  padding: 0.5rem 1rem 0.5rem 0 ;
+  text-align: center;
+}
+
+.text-colorAccentWithoutBackground{
+  color: var(--mainColorAccent);
 }
 
 .text-bright{

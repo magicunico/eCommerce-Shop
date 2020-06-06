@@ -32,24 +32,29 @@ export default class Details extends React.Component {
                                     </h4>
                                     <h4 className="text-capitalize text-colorAccent">
                                         <strong>
-                                            price: <span>$ </span>{price}
+                                            price: <span className="background-colorAccent">$ {price}</span>
                                         </strong>
                                     </h4>
                                     <p className="font-weight-bold mt-3 mb-0">
                                         Description:
                                     </p>
-                                    <p className="text-muted lead">
+                                    <p className="text-muted lead mb-3">
                                         {info}
                                     </p>
                                     {/* buttons */}
                                     <div>
                                         <Link to="/">
-                                            <ButtonContainer>Back to products</ButtonContainer>
+                                            <ButtonContainer
+                                            productBtn
+                                            >
+                                                Back to products
+                                                </ButtonContainer>
                                         </Link>
                                         <ButtonContainer
                                             disabled={inCart ? true : false}
                                             onClick={() => {
-                                                value.addToCart(id)
+                                                value.addToCart(id);
+                                                value.openModal(id);
                                             }}>
                                             {inCart ? 'in cart' : 'add to cart'}
                                         </ButtonContainer>
