@@ -29,9 +29,9 @@ export default class Product extends React.Component {
                     </div>
                     {/* footer */}
                     <div className="card-footer d-flex justify-content-between">
-                        <p className="align-self-center mb-0"> {title} </p>
+                        <h4 className="align-self-center mb-0"> {title} </h4>
                         <h4 className="font-italic mb-0">
-                            <span className="mr-1">$</span>{price}
+                            <span className="mr-1 ml-3">$</span>{price}
                         </h4>
 
                     </div>
@@ -48,8 +48,9 @@ const ProductWrapper = styled.div`
 }
 .card-footer{
     background: transparent;
-    color: var(--mainColor);
+    color: var(--mainColorAccent);
     transition: all 0.5s linear;
+    height:5rem;
 }
 &:hover{
     .card{
@@ -58,7 +59,7 @@ const ProductWrapper = styled.div`
     }
     .card-footer{
         background: var(--lightColor);
-        color: var(--mainAccent);
+        color: var(--mainColorAccent);
     }
 }
 .img-container{
@@ -95,8 +96,6 @@ const ProductWrapper = styled.div`
     transform: translate(100%,100%);
     transition: all 0.5s linear;
 }
-
-
 
 .img-container:hover .cart-btn{
     transform: translate(0,0);

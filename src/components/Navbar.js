@@ -34,7 +34,7 @@ export default class Navbar extends React.Component {
 const NavWrapper = styled.nav`
 background: var(--mainColor);
 .nav-link{
-    color: var(--mainAccent) !important;
+    color: var(--mainColorAccent) !important;
     font-size: 1.8rem;
     text-transform: capitalize !important;
 }

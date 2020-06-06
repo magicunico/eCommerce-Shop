@@ -1,9 +1,10 @@
 :root{
   --mainColor: #3a3a47;
-  --lightColor:#3a3a47;
+  --lightColor:#4c4ca5;
   --mainLight: #f3f3f3;
   --mainDark:#232528;
   --mainAccent:#d9ff00;
+  --mainColorAccent:#ff3300;
 }
 
 body{
@@ -16,10 +17,19 @@ body{
   font-family: 'Metal Mania', cursive;
 letter-spacing: 0.3rem;
 text-transform: uppercase;
+color: var(--mainColorAccent);
 }
 
 .text-color{
   color: var(--mainAccent);
+  background-color: var(--mainColor);
+  padding: 0.5rem;
+}
+
+.text-colorAccent{
+  color: var(--mainColorAccent);
+  background-color: var(--mainColor);
+  padding: 0.5rem;
 }
 
 .text-bright{
