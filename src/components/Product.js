@@ -55,9 +55,9 @@ const ProductWrapper = styled.div`
 }
 .card-footer{
     background: transparent;
-    color: var(--mainColorAccent);
+    color: var(--mainColor);
     transition: all 0.5s linear;
-    height:5rem;
+    
 }
 &:hover{
     .card{
@@ -66,7 +66,7 @@ const ProductWrapper = styled.div`
     }
     .card-footer{
         background: var(--mainColor);
-        color: var(--mainColorAccent);
+        color: var(--mainAccent);
     }
 }
 .img-container{
