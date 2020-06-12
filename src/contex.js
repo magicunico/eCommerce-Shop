@@ -13,24 +13,81 @@ class ProductProvider extends React.Component {
         cart: [],
         modalOpen: false,
         modalProduct: detailProduct,
-        cartTotal:0,
+        cartTotal: 0,
     };
 
-    increment=(id)=>{
-        console.log("inc")
+    increment = (id) => {
+        let tempCart = [...this.state.cart]
+
+        const toUpdateProduct = tempCart.find(item => item.id === id);
+
+        const index = tempCart.indexOf(toUpdateProduct);
+
+        const product = tempCart[index];
+
+        product.count += 1;
+        product.total += product.price;
+
+        this.setState(() => {
+            return {
+                cart: [...tempCart]
+            }
+        }, ()=>this.addTotals())
+
     }
 
-    decrement=(id)=>{
-        console.log("dec")
+    decrement = (id) => {
+        let tempCart = [...this.state.cart]
+
+        const toUpdateProduct = tempCart.find(item => item.id === id);
+
+        const index = tempCart.indexOf(toUpdateProduct);
+
+        const product = tempCart[index];
+
+        if (product.count >= 1) {
+            product.count -= 1;
+            product.total -= product.price;
+        }
+
+        this.setState(() => {
+            return {
+                cart: [...tempCart]
+            }
+        }, ()=>this.addTotals())
+
     }
 
-    removeItem=(id)=>{
-        console.log("remove")
+    removeItem = (id) => {
+        let tempProducts = [...this.state.products]
+        let tempCart = [...this.state.cart]
+
+        tempCart = tempCart.filter(item => item.id !== id);
+
+        const index = tempProducts.indexOf(this.getItem(id));
+        let removedProduct = tempProducts[index];
+        removedProduct.inCart = false;
+        removedProduct.count = 0;
+        removedProduct.total = 0;
+
+        this.setState(() => {
+            return {
+                products: [...tempProducts],
+                cart: [...tempCart]
+            }
+        }, this.addTotals)
+
     }
 
-    clearCart=()=>{
-        console.log("cleared")
-    }
+    addTotals = () => {
+        let totalValue = 0;
+        this.state.cart.map(item => (totalValue += item.total));
+        this.setState(() => {
+            return {
+                cartTotal: totalValue
+            };
+        });
+    };
 
     componentDidMount() {
         this.setProducts();
@@ -83,18 +140,18 @@ class ProductProvider extends React.Component {
         let tempProducts = [...this.state.products];
         const index = tempProducts.indexOf(this.getItem(id));
         const product = tempProducts[index];
-        const totalValue = product.price;
         product.inCart = true;
         product.count = 1;
-        product.total = totalValue;
+        const price = product.price;
+        product.total = price;
 
         this.setState(() => {
             return {
                 products: tempProducts,
-                cart: [...this.state.cart, product]
-            }
-        })
-
+                cart: [...this.state.cart, product],
+                detailProduct: { ...product }
+            };
+        }, this.addTotals)
 
     }
 
@@ -108,10 +165,10 @@ class ProductProvider extends React.Component {
                 addToCart: this.addToCart,
                 openModal: this.openModal,
                 closeModal: this.closeModal,
-                increment:this.increment,
-                decrement:this.decrement,
-                clearCart:this.clearCart,
-                removeItem:this.removeItem
+                increment: this.increment,
+                decrement: this.decrement,
+                clearCart: this.clearCart,
+                removeItem: this.removeItem
             }}>
                 {this.props.children}
             </ProductContext.Provider>

@@ -1,10 +1,13 @@
 import React from 'react'
-import InCartItem from './InCardItem'
+import InCartItem from './InCartItem'
 
-export default function InCartList(){
+export default function InCartList({value}){
+    const {cart} = value
     return(
-        <div>
-            <InCardItem/>
+        <div className="container-fluid">
+            {cart.map(item=>{
+                return <InCartItem key={item.id} item={item} value={value}/>
+            })}
         </div>
     )
 }

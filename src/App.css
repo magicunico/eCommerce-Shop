@@ -47,3 +47,18 @@ color: var(--mainColorAccent);
   color: var(--lightColor);
 }
 
+.btn-black{
+  
+  font-size: 0.8rem !important;
+  color: var(--mainAccent);
+  border-radius: 0 !important;
+  border: 0.1rem solid var(--mainAccent) !important;
+}
+
+.btn-black:hover{
+  background: var(--mainAccent);
+}
+
+.count-cl{
+  font-size: 1rem !important;
+}
