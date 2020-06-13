@@ -55,10 +55,30 @@ color: var(--mainColorAccent);
   border: 0.1rem solid var(--mainAccent) !important;
 }
 
+.btn-payment{
+  font-size: 1rem !important;
+  color: var(--mainColorAccent);
+  border-radius: 0 !important;
+  border: 0.1rem solid var(--mainColorAccent) !important;
+}
+
+.btn-payment:hover{
+  background: var(--mainColorAccent);
+}
+
 .btn-black:hover{
   background: var(--mainAccent);
 }
 
 .count-cl{
   font-size: 1rem !important;
+}
+
+.payment-details{
+  font-size: 1rem !important;
+  font-weight: bolder;
+  font-family: 'Metal Mania', cursive;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: var(--mainColorAccent);
 }

@@ -58,6 +58,19 @@ class ProductProvider extends React.Component {
 
     }
 
+    cartClear = () => {
+
+        this.setState(() => {
+            return {
+                cart: []
+            }
+        }, ()=>{
+            this.setProducts();
+            this.addTotals(); })
+
+    }
+
+    
     removeItem = (id) => {
         let tempProducts = [...this.state.products]
         let tempCart = [...this.state.cart]
@@ -167,7 +180,7 @@ class ProductProvider extends React.Component {
                 closeModal: this.closeModal,
                 increment: this.increment,
                 decrement: this.decrement,
-                clearCart: this.clearCart,
+                cartClear: this.cartClear,
                 removeItem: this.removeItem
             }}>
                 {this.props.children}
