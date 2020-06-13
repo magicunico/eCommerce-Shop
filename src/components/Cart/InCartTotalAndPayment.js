@@ -5,12 +5,7 @@ import { Link } from 'react-router-dom'
 export default class InCartTotalAndPayment extends React.Component {
     render() {
         const { cartTotal, cartClear } = this.props.value
-    
-        
-        
-        
-        
-        
+
         return (
             <React.Fragment>
                 <div className="container">
@@ -20,7 +15,7 @@ export default class InCartTotalAndPayment extends React.Component {
                                 <span className="text-title"> Total: </span>
                                 <strong> $ {cartTotal}</strong>
                             </h5>
-                            <Link to={{ pathname: "/payment", state: { total: cartTotal} }}>
+                            <Link onClick={cartClear} to={{ pathname: "/payment", state: { total: cartTotal} }}>
                                 <span className="btn btn-payment">
                                     <i className="fas fa-money-bill-wave">Go to payment</i>
                                 </span>
@@ -29,8 +24,8 @@ export default class InCartTotalAndPayment extends React.Component {
                     </div>
                 </div>
             </React.Fragment>
-            
+
         )
-        
+
     }
 }
